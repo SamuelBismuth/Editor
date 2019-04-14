@@ -1,8 +1,17 @@
+/* Samuel Bismuth 342533064 */
+/* Matan Zilka 307949438 */
+
 #include "Editor.h"
 
+/**
+ Constructor.
+ */
 Editor::Editor() {
 }
 
+/**
+ Hashit to get the division as proper as we can (note c++ switch do not allow string).
+ */
 string_code Editor::hashit(std::string const& inString) {
     if (inString == "p") return string_code::print;
     if (inString == "n") return string_code::num;
@@ -24,6 +33,9 @@ string_code Editor::hashit(std::string const& inString) {
     else return string_code::def;
 }
 
+/**
+ Loop function for all the exercise.
+ */
 void Editor::loop() {
     while (1) {
         std::string line;
@@ -59,7 +71,7 @@ void Editor::loop() {
             case string_code::replace:
                 if (line.substr(2, line.size()).find('/') != std::string::npos) {
                     int index = line.substr(2, line.size()).find('/');
-                    doc.replace(line.substr(2, index), line.substr(index + 3, line.size()));
+                    doc.replace(line.substr(2, index), line.substr(index + 3, line.size() - (index + 4)));
                 }
                 else {
                     std:: cout << "?" << std::endl;

@@ -1,15 +1,22 @@
+/* Samuel Bismuth 342533064 */
+/* Matan Zilka 307949438 */
+
 #ifndef DOCUMENT_H
 #define DOCUMENT_H
 
 #include <iostream>
 #include <string>
 #include <vector>
+#include <limits>
 
+/**
+ Class Documennt.
+ */
 class Document {
 
     private:
-    std::vector<std::string> lines;
-    int current_line;
+    std::vector<std::string> lines;  // The lines.
+    int current_line;  // The current line.
 
     public:
     Document();
